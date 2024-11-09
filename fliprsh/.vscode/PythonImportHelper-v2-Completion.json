@@ -1,0 +1,347 @@
+[
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "ForeignKey",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "sessionmaker",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "relationship",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "UserCreate",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserLogin",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ProductCreate",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CryptContext",
+        "importPath": "passlib.context",
+        "description": "passlib.context",
+        "isExtraImport": true,
+        "detail": "passlib.context",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "TYPE_CHECKING",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "declarative_base",
+        "importPath": "sqlalchemy.ext.declarative",
+        "description": "sqlalchemy.ext.declarative",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.declarative",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "EmailStr",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def get_db():\n    db = SessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()\n# Password hashing functions\ndef verify_password(plain_password, hashed_password):\n    return pwd_context.verify(plain_password, hashed_password)\ndef get_password_hash(password):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "verify_password",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def verify_password(plain_password, hashed_password):\n    return pwd_context.verify(plain_password, hashed_password)\ndef get_password_hash(password):\n    return pwd_context.hash(password)\n# Routes\n@app.post(\"/signup\")\nasync def signup(user: UserCreate, db: Session = Depends(get_db)):\n    # Check if email already exists\n    db_user = db.query(User).filter(User.email == user.email).first()\n    if db_user:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def get_password_hash(password):\n    return pwd_context.hash(password)\n# Routes\n@app.post(\"/signup\")\nasync def signup(user: UserCreate, db: Session = Depends(get_db)):\n    # Check if email already exists\n    db_user = db.query(User).filter(User.email == user.email).first()\n    if db_user:\n        raise HTTPException(status_code=400, detail=\"Email already registered\")\n    # Hash the password",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "create_product",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def create_product(product: ProductCreate, db: Session = Depends(get_db)):\n    # Check if the user exists\n    db_user = db.query(User).filter(User.id == product.user_id).first()\n    if db_user is None:\n        raise HTTPException(status_code=404, detail=\"User not found\")\n    # Create a new product\n    db_product = Product(\n        name=product.name,\n        description=product.description,\n        price=product.price,",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "SQLALCHEMY_DATABASE_URL",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "SQLALCHEMY_DATABASE_URL = \"postgresql://postgres:zoro%40123@localhost/fastapi\"\n# Database setup\nengine = create_engine(SQLALCHEMY_DATABASE_URL)\nSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)\nBase.metadata.create_all(bind=engine)\n# FastAPI setup\napp = FastAPI()\n# Password hashing setup\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\n# Dependency to get the database session",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "engine = create_engine(SQLALCHEMY_DATABASE_URL)\nSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)\nBase.metadata.create_all(bind=engine)\n# FastAPI setup\napp = FastAPI()\n# Password hashing setup\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\n# Dependency to get the database session\ndef get_db():\n    db = SessionLocal()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "SessionLocal",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)\nBase.metadata.create_all(bind=engine)\n# FastAPI setup\napp = FastAPI()\n# Password hashing setup\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\n# Dependency to get the database session\ndef get_db():\n    db = SessionLocal()\n    try:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "app = FastAPI()\n# Password hashing setup\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\n# Dependency to get the database session\ndef get_db():\n    db = SessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "pwd_context",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "pwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\n# Dependency to get the database session\ndef get_db():\n    db = SessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()\n# Password hashing functions\ndef verify_password(plain_password, hashed_password):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 6,
+        "importPath": "models",
+        "description": "models",
+        "peekOfCode": "class User(Base):\n    __tablename__ = \"users\"\n    id = Column(Integer, primary_key=True, index=True)\n    email = Column(String, unique=True, index=True)\n    hashed_password = Column(String)\n    name = Column(String)\n    products = relationship(\"Product\", back_populates=\"user\")\nclass Product(Base):\n    __tablename__ = \"products\"\n    id = Column(Integer, primary_key=True, index=True)",
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "kind": 6,
+        "importPath": "models",
+        "description": "models",
+        "peekOfCode": "class Product(Base):\n    __tablename__ = \"products\"\n    id = Column(Integer, primary_key=True, index=True)\n    name = Column(String, index=True)\n    description = Column(String)\n    price = Column(Integer)\n    category = Column(String)\n    user_id = Column(Integer, ForeignKey(\"users.id\"))\n    user = relationship(\"User\", back_populates=\"products\")",
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "kind": 5,
+        "importPath": "models",
+        "description": "models",
+        "peekOfCode": "Base = declarative_base()\nclass User(Base):\n    __tablename__ = \"users\"\n    id = Column(Integer, primary_key=True, index=True)\n    email = Column(String, unique=True, index=True)\n    hashed_password = Column(String)\n    name = Column(String)\n    products = relationship(\"Product\", back_populates=\"user\")\nclass Product(Base):\n    __tablename__ = \"products\"",
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "ProductCreate",
+        "kind": 6,
+        "importPath": "schemas",
+        "description": "schemas",
+        "peekOfCode": "class ProductCreate(BaseModel):\n    name: str\n    description: str\n    price: int\n    category: str\n    user_id: int\nclass UserBase(BaseModel):\n    email: EmailStr\n    name: str\nclass UserCreate(UserBase):",
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserBase",
+        "kind": 6,
+        "importPath": "schemas",
+        "description": "schemas",
+        "peekOfCode": "class UserBase(BaseModel):\n    email: EmailStr\n    name: str\nclass UserCreate(UserBase):\n    password: str\nclass UserLogin(BaseModel):\n    email: EmailStr\n    password: str\nclass User(UserBase):\n    id: int",
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserCreate",
+        "kind": 6,
+        "importPath": "schemas",
+        "description": "schemas",
+        "peekOfCode": "class UserCreate(UserBase):\n    password: str\nclass UserLogin(BaseModel):\n    email: EmailStr\n    password: str\nclass User(UserBase):\n    id: int\n    products: List[\"Product\"] = []  # Forward reference to Product model\n    class Config:\n        orm_mode = True",
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserLogin",
+        "kind": 6,
+        "importPath": "schemas",
+        "description": "schemas",
+        "peekOfCode": "class UserLogin(BaseModel):\n    email: EmailStr\n    password: str\nclass User(UserBase):\n    id: int\n    products: List[\"Product\"] = []  # Forward reference to Product model\n    class Config:\n        orm_mode = True",
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 6,
+        "importPath": "schemas",
+        "description": "schemas",
+        "peekOfCode": "class User(UserBase):\n    id: int\n    products: List[\"Product\"] = []  # Forward reference to Product model\n    class Config:\n        orm_mode = True",
+        "detail": "schemas",
+        "documentation": {}
+    }
+]
